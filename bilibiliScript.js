@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         B站中键修复
 // @namespace    https://github.com/Zhuxb-Clouds/TamperScript
-// @version      2024-03-09
+// @version      0.0.1
 // @description  通过更改a标签的href属性，使得中键点击可以在新标签页打开视频。
 // @author       Zhuxb
-// @match        https://www.bilibili.com/video/*
+// @match        https://www.bilibili.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=bilibili.com
 // @grant        none
 // @license MIT
