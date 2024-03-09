@@ -10,27 +10,25 @@
 // @license MIT
 // ==/UserScript==
 
-(function() {
-  'use strict';
+(function () {
+  "use strict";
   const targetMap = {
-    "jump-link search-word" : (item)=>{
-      return item.getAttribute('data-url');
+    "jump-link search-word": (item) => {
+      return item.getAttribute("data-url");
     },
-    "jump-link user": (item)=>{
-      return 'https://space.bilibili.com/'+item.getAttribute('data-user-id');
-    }
-  }
-  var timer = setInterval(function(){
-    Object.keys(targetMap).forEach((key)=>{
+    "jump-link user": (item) => {
+      return "https://space.bilibili.com/" + item.getAttribute("data-user-id");
+    },
+  };
+  var timer = setInterval(function () {
+    Object.keys(targetMap).forEach((key) => {
       var elements = document.getElementsByClassName(key);
-      if(elements.length === 0) return;
-      console.log("elements",elements);
+      if (elements.length === 0) return;
       elements = Array.from(elements);
-      elements.forEach(item => {
+      elements.forEach((item) => {
+        if (item.href) return;
         item.href = targetMap[key](item);
-        console.dir(item);
       });
-    })
+    });
   }, 5000);
-
 })();
