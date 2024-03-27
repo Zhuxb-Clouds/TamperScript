@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         B站中键修复
 // @namespace    https://github.com/Zhuxb-Clouds/TamperScript
-// @version      0.0.1
+// @version      0.0.2
 // @description  通过更改a标签的href属性，使得中键点击可以在新标签页打开视频。
 // @author       Zhuxb
 // @match        https://www.bilibili.com/*
@@ -19,7 +19,7 @@
     "jump-link user": (item) => {
       return "https://space.bilibili.com/" + item.getAttribute("data-user-id");
     },
-    "jump-link video":()=>{
+    "jump-link video":(item)=>{
       return item.getAttribute("data-url");
     }
   };
