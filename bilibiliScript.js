@@ -19,6 +19,9 @@
     "jump-link user": (item) => {
       return "https://space.bilibili.com/" + item.getAttribute("data-user-id");
     },
+    "jump-link video":()=>{
+      return item.getAttribute("data-url");
+    }
   };
   var timer = setInterval(function () {
     Object.keys(targetMap).forEach((key) => {
