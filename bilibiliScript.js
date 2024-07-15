@@ -19,9 +19,19 @@
     "jump-link user": (item) => {
       return "https://space.bilibili.com/" + item.getAttribute("data-user-id");
     },
-    "jump-link video":(item)=>{
+    "jump-link video": (item) => {
       return item.getAttribute("data-url");
-    }
+    },
+    "header-entry-avatar": (item) => {
+      // 删除所有的参数
+      const url = new URL(item.href);
+      return url.origin + url.pathname;
+    },
+    "up-avatar": (item) => {
+      // 删除所有的参数
+      const url = new URL(item.href);
+      return url.origin + url.pathname;
+    },
   };
   setInterval(function () {
     Object.keys(targetMap).forEach((key) => {
